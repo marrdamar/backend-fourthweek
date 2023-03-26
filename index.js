@@ -21,43 +21,43 @@ server.use(masterRouter);
 
 //product
 //profile
-const profileController = require('./src/routers/profile')
-server.use('/profile', profileController)
+// const profileController = require('./src/routers/profile')
+// server.use('/profile', profileController)
 
-//auth
-const authRoute = require('./src/routers/auth')
-server.use('/auth', authRoute)
+// //auth
+// const authRoute = require('./src/routers/auth')
+// server.use('/auth', authRoute)
 
-//auth
-const authProduct = require('./src/routers/product')
-server.use('/items', authProduct)
+// //auth
+// const authProduct = require('./src/routers/product')
+// server.use('/items', authProduct)
 
-server.get('/users/email=:email', (req, res) => {
-    const database = require("./src/configs/postgre")
-    database.query(`select email from users where email = '${req.params.email}'`, (err, result) => {
-        if (err) {
-            res.status(500).json({
-                msg: "Internal Server Error!",
-            });
-            return;
-        }
+// server.get('/users/email=:email', (req, res) => {
+//     const database = require("./src/configs/postgre")
+//     database.query(`select email from users where email = '${req.params.email}'`, (err, result) => {
+//         if (err) {
+//             res.status(500).json({
+//                 msg: "Internal Server Error!",
+//             });
+//             return;
+//         }
 
-        if (result.rows.length > 0) {
-            res.status(200).json({
-                data: 'email exist'
-            });
-            return;
-        }
+//         if (result.rows.length > 0) {
+//             res.status(200).json({
+//                 data: 'email exist'
+//             });
+//             return;
+//         }
 
-        res.status(404).json({
-            data: 'go on'
-        });
-    })
-})
+//         res.status(404).json({
+//             data: 'go on'
+//         });
+//     })
+// })
 
 
 
 server.listen(PORT, () => {
-    console.log(`Server is running at PO        RT ${PORT}`)
+    console.log(`Server is running at PORT ${PORT}`)
     console.log(`Welcome`)
 });

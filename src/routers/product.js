@@ -1,13 +1,15 @@
 const route = require("express").Router();
-const database = require("..//configs/postgre")
-const authProduct = require('../controllers/product')
+const database = require("..//configs/postgre");
+const authProduct = require('../controllers/product');
+const { Router } = require("express");
+const productsRouter = Router();
 
-route.get('/product', authProduct.product)
-route.post('/addProduct', authProduct.addProduct)
-route.post('/addPromo', authProduct.addPromo)
-route.get('/promo/id=:id', authProduct.promo)
-route.get('/historyProduct', authProduct.historyProduct)
-route.delete('/deleteHistory/id=:id', authProduct.deleteHistory)
+productsRouter.get('/product', authProduct.product)
+productsRouter.post('/addProduct', authProduct.addProduct)
+productsRouter.post('/addPromo', authProduct.addPromo)
+productsRouter.get('/promo/id=:id', authProduct.promo)
+productsRouter.get('/historyProduct', authProduct.historyProduct)
+productsRouter.delete('/deleteHistory/id=:id', authProduct.deleteHistory)
 
 
-module.exports = route
+module.exports = productsRouter

@@ -8,7 +8,7 @@ server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 const masterRouter = require("./src/routers");
 
-app.use(masterRouter); 
+server.use(masterRouter); 
 
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 // const uri = "mongodb+srv://admin:admin@testweek6.khuq2ny.mongodb.net/?retryWrites=true&w=majority";

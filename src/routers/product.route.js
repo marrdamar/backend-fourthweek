@@ -1,5 +1,3 @@
-const route = require("express").Router();
-const database = require("../configs/postgre");
 const authProduct = require('../controllers/product');
 const { Router } = require("express");
 const productsRouter = Router();

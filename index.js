@@ -6,15 +6,18 @@ const PORT = 3004;
 server.use(cors())
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
+const masterRouter = require("./src/routers");
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://admin:admin@testweek6.khuq2ny.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  const collection = client.db("coffee_shop").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+app.use(masterRouter); 
+
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://admin:admin@testweek6.khuq2ny.mongodb.net/?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+// client.connect(err => {
+//   const collection = client.db("coffee_shop").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 //product
 //profile
@@ -55,6 +58,6 @@ server.get('/users/email=:email', (req, res) => {
 
 
 server.listen(PORT, () => {
-    console.log(`Server is running at PORT ${PORT}`)
+    console.log(`Server is running at PO        RT ${PORT}`)
     console.log(`Welcome`)
 });

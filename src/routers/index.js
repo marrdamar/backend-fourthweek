@@ -9,7 +9,7 @@ const { Router } = require("express");
 // users /users
 // const usersRouter = require("./users.route");
 // products /products
-const productsRouter = require("../routers/product");
+const productsRouter = require("./product.route");
 
 // transactions /transactions
 // const transactionsRouter = require("./transactions.route");

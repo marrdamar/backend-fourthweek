@@ -5,30 +5,30 @@
 // ENDPOINT = alat navigasi
 const { Router } = require("express");
 // wellcome / 
-const wellcomeRouter = require("../html/wellcome.html");
+// const wellcomeRouter = require("../html/wellcome.html");
 // users /users
-const usersRouter = require("./users.route");
+// const usersRouter = require("./users.route");
 // products /products
 const productsRouter = require("../routers/product");
 
 // transactions /transactions
-const transactionsRouter = require("./transactions.route");
+// const transactionsRouter = require("./transactions.route");
 
-// promo /promo
-const promoRouter = require("./promo.route");
+// // promo /promo
+// const promoRouter = require("./promo.route");
 
-// auth /auth
-const authRouter = require("./auth.route");
+// // auth /auth
+// const authRouter = require("./auth.route");
 
-const { checkToken } = require("../middlewares/auth");
+// const { checkToken } = require("../middlewares/auth");
 
 
 const masterRouter = Router();
-masterRouter.use("/users", usersRouter);
+// masterRouter.use("/users", usersRouter);
 masterRouter.use("/products", productsRouter);
-masterRouter.use("/transactions", checkToken, transactionsRouter);
-masterRouter.use("/promo", promoRouter);
-masterRouter.use("/auth", authRouter);
-masterRouter.use("/", wellcomeRouter);
+// masterRouter.use("/transactions", checkToken, transactionsRouter);
+// masterRouter.use("/promo", promoRouter);
+// masterRouter.use("/auth", authRouter);
+// masterRouter.use("/", wellcomeRouter);
 
 module.exports = masterRouter;

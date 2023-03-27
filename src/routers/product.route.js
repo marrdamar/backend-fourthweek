@@ -1,4 +1,4 @@
-const authProduct = require('../controllers/product');
+const authProduct = require('../controllers/product.controller');
 const { Router } = require("express");
 const productsRouter = Router();
 

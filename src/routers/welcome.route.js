@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const welcomeController = require("../controllers/welcome.controller");
+const welcomeController = require("../controllers/welcome.controller").default;
 
 const welcomeRouter = Router();
 

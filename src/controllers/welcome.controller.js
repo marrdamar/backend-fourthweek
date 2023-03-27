@@ -1,9 +1,9 @@
-const path = require("path");
+import { join } from "path";
 
 const welcomePage = (req, res) => {
-	res.status(200).sendFile(path.join(__dirname, "../html/welcome.html"));
+	res.status(200).sendFile(join(__dirname, "../html/welcome.html"));
 };
 
-module.exports = {
+export default {
 	welcomePage,
 };

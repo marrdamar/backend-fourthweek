@@ -1,13 +1,16 @@
-const authProduct = require('../controllers/product.controller');
 const { Router } = require("express");
+
+const productsController = require("../controllers/product.controller");
+const { checkToken } = require("../middleware/auth");
+// const { checkRole } = require("../middleware/checkRole");
+// const memoryUpload = require("../middleware/memoryUpload");
+
 const productsRouter = Router();
 
-productsRouter.get('/', authProduct.product)
-productsRouter.post('/addProduct', authProduct.addProduct)
-productsRouter.post('/addPromo', authProduct.addPromo)
-productsRouter.get('/promo/id=:id', authProduct.promo)
-productsRouter.get('/historyProduct', authProduct.historyProduct)
-productsRouter.delete('/deleteHistory/id=:id', authProduct.deleteHistory)
+productsRouter.get("/", productsController.getProducts);
+// productsRouter.get("/:productId", productsController.getProductDetail);
+// productsRouter.post("/", checkRole, checkToken, memoryUpload.single("img"), productsController.insertProducts);
+// productsRouter.patch("/:productId", checkRole, checkToken, memoryUpload.single("img"), productsController.updateProduct);
+// productsRouter.delete("/:productId", checkRole, checkToken, productsController.deleteProduct);
 
-
-module.exports = productsRouter
+module.exports = productsRouter;

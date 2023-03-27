@@ -1,10 +1,9 @@
-import { join } from "path";
+const path = require("path");
 
 const welcomePage = (req, res) => {
-	const newLocal = require('../html/welcome.html');
-	res.status(200).sendFile(join(__dirname, newLocal));
+	res.status(200).sendFile(path.join(__dirname, "../html/welcome.html"));
 };
 
-export default {
+module.exports = {
 	welcomePage,
 };

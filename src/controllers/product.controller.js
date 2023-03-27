@@ -1,6 +1,6 @@
-const productsModel = require("../models/products.model");
+const productsModel = require("../models/product.model");
 const { error } = require("../utils/response");
-const { uploader } = require("../utils/cloudinary");
+const { uploader } = require("../utils/cloudinary.js");
 
 const getProducts = async (req, res) => {
 	try {

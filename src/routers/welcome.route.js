@@ -1,9 +1,9 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-import welcomeController from "../controllers/welcome.controller";
+const welcomeController = require("../controllers/welcome.controller");
 
 const welcomeRouter = Router();
 
 welcomeRouter.get("/", welcomeController.welcomePage);
 
-export default welcomeRouter;
+module.exports = welcomeRouter;

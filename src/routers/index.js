@@ -1,34 +1,18 @@
-// URL = PROTOCOL://HOST:PORT/ENDPOINT 
-// PROTOCOL = http, https
-// HOST = ip, domain
-// PORT = ketika ip ada port
-// ENDPOINT = alat navigasi
-const { Router } = require("express");
-// wellcome / 
-// const wellcomeRouter = require("../html/wellcome.html");
-// users /users
-// const usersRouter = require("./users.route");
-// products /products
-const productsRouter = require("./product.route");
+import { Router } from "express";
+import welcomeRouter from "./welcome.route";
+import usersRouter from "./users.route";
+import productsRouter from "./products.route";
+import promosRouter from "./promos.route";
+import historyRouter from "./history.route";
+import authRouter from "./auth.route";
 
-// transactions /transactions
-// const transactionsRouter = require("./transactions.route");
+const mainRouter = Router();
 
-// // promo /promo
-// const promoRouter = require("./promo.route");
+mainRouter.use("/", welcomeRouter);
+mainRouter.use("/users", usersRouter);
+mainRouter.use("/products", productsRouter);
+mainRouter.use("/promos", promosRouter);
+mainRouter.use("/history", historyRouter);
+mainRouter.use("/auth", authRouter);
 
-// // auth /auth
-// const authRouter = require("./auth.route");
-
-// const { checkToken } = require("../middlewares/auth");
-
-
-const masterRouter = Router();
-// masterRouter.use("/users", usersRouter);
-masterRouter.use("/products", productsRouter);
-// masterRouter.use("/transactions", checkToken, transactionsRouter);
-// masterRouter.use("/promo", promoRouter);
-// masterRouter.use("/auth", authRouter);
-// masterRouter.use("/", wellcomeRouter);
-
-module.exports = masterRouter;
+export default mainRouter;

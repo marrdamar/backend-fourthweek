@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const mainRouter = require("./src/routers");
+const mainRouter = require("./src/routers").default;
 
 const app = express();
 const PORT = process.env.SERVER_PORT || 8080;
